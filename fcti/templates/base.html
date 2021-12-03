@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Сайт ФКТИ" content="Сайт факультета компьютерных технологий и информатики ЛЭТИ">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loaderWrapper"></div>
+        <img class="loader" src= "{% static 'img/loader.gif'%}" alt="loading">
+    </div>
+    <header class="header">
+        <div class = "headerWrapper">
+            <a href="#" class="logoLink">
+                <h1 class="logo" id = "logo">ФКТИ</h1>
+            </a>
+            <nav class="nav">
+                <ul class="navList">
+                    <li><a href="/about" class="navLink">О нас</a></li>
+                    <li><a href="#" class="navLink">Учеба</a></li>
+                    <li><a href="#list" class="navLink">О факультете</a></li>
+                    <li><a href="#memes" class="navLink">Мемасы</a></li>
+                    <li><span class="navLink" id="theme">Темная тема</span></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="mainWrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer class="footer">
+        <a href="https://etu.ru" class="link">
+            <h2>Сайт ЛЭТИ</h2>
+        </a>
+    </footer>
+    <script src= "{% static 'js/script.js'%}"></script>
+</body>
+</html>
+
+
